@@ -15,7 +15,7 @@ const Navbar = () => {
   useEffect(() => {
     const fetchNotifications = async () => {
       try {
-        const { data } = await axios.get('http://localhost:5000/api/outpass');
+        const { data } = await axios.get('/api/outpass');
         if (user?.role === 'student') {
           const updates = data.filter(op => op.status !== 'pending').slice(0, 5);
           setNotifications(updates);

@@ -19,7 +19,7 @@ const OutpassModal = ({ isOpen, onClose, onSuccess }) => {
     e.preventDefault();
     setLoading(true);
     try {
-      await axios.post('http://localhost:5000/api/outpass', formData);
+      await axios.post('/api/outpass', formData);
       toast.success('Outpass request submitted successfully!');
       onSuccess?.();
       onClose();

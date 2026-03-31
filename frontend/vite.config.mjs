@@ -10,4 +10,9 @@ export default defineConfig({
     tailwindcss(),
     cloudflare(),
   ],
+  server: {
+    proxy: {
+      '/api': 'http://127.0.0.1:8788',
+    },
+  },
 });

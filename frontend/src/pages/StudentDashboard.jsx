@@ -19,7 +19,7 @@ const StudentDashboard = () => {
 
   const fetchOutpasses = async () => {
     try {
-      const { data } = await axios.get('http://localhost:5000/api/outpass');
+      const { data } = await axios.get('/api/outpass');
       setOutpasses(data);
     } catch (err) {
       toast.error('Failed to load outpasses');

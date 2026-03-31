@@ -16,7 +16,7 @@ const AdminDashboard = () => {
 
   const fetchRequests = async () => {
     try {
-      const { data } = await axios.get('http://localhost:5000/api/outpass');
+      const { data } = await axios.get('/api/outpass');
       setRequests(data);
     } catch (err) {
       toast.error('Failed to load outpass requests');
@@ -31,7 +31,7 @@ const AdminDashboard = () => {
 
   const handleStatusUpdate = async (id, status) => {
     try {
-      await axios.put(`http://localhost:5000/api/outpass/${id}`, { status });
+      await axios.put(`/api/outpass/${id}`, { status });
       toast.success(`Request ${status} successfully`);
       fetchRequests();
       setSelectedRequest(null);
